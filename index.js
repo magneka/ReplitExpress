@@ -28,4 +28,8 @@ app.get('/user/:id', async (req, res) => {
   res.json(result);  
 });
 
+app.post('/user/:id', async (req, res) => {
+  
+});
+
 app.listen(3000, () => console.log('Gator app listening on port 3000!'));

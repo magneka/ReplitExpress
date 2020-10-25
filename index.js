@@ -7,11 +7,11 @@ const db = new Database()
 db.set("1", {
       firstname: 'Magne',
       lastname: 'Alvheim'
-    }).then(() => {});
+    }).then(() => {})
 db.set("2", {
       firstname: 'Donald',
       lastname: 'Trump'
-    }).then(() => {});
+    }).then(() => {})
 
 
 app.get('/', (req, res) => {
@@ -37,7 +37,7 @@ app.get('/users', async (req, res) => {
 app.get('/user/:id', async (req, res) => {
   console.log(req.params.id)  
   let result = await db.get(req.params.id)
-  res.json(result);  
+  res.json(result) 
 });
 
 app.post('/user/:id', async (req, res) => {
@@ -47,7 +47,7 @@ app.post('/user/:id', async (req, res) => {
     lastname: req.body.lastname
   }  
   console.log("User lastname = " + lastname + ", firstname "+ firstname)  
-  await db.set(id, record);
+  await db.set(id, record)
 })
 
-app.listen(3000, () => console.log('Gator app listening on port 3000!'));
+app.listen(3000, () => console.log('Gator app listening on port 3000!'))
